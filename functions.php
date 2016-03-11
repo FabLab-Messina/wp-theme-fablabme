@@ -10,7 +10,8 @@ sidebars, comments, etc.
 
 // LOAD BONES CORE (if you remove this, the theme will break)
 require_once( 'library/bones.php' );
-require_once('library/CPT.php');
+
+require_once( 'library/CPT.php' );
 
 
 /*********************
