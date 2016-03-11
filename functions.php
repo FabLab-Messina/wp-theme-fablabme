@@ -11,8 +11,6 @@ sidebars, comments, etc.
 // LOAD BONES CORE (if you remove this, the theme will break)
 require_once( 'library/bones.php' );
 
-// CUSTOMIZE THE WORDPRESS ADMIN (off by default)
-// require_once( 'library/admin.php' );
 
 /*********************
 LAUNCH BONES
@@ -48,7 +46,7 @@ function bones_ahoy() {
   bones_theme_support();
 
   // adding sidebars to Wordpress (these are created in functions.php)
-  add_action( 'widgets_init', 'bones_register_sidebars' );
+  //add_action( 'widgets_init', 'bones_register_sidebars' );
 
   // cleaning up random code around images
   add_filter( 'the_content', 'bones_filter_ptags_on_images' );
@@ -107,7 +105,7 @@ add_action( 'customize_register', 'bones_theme_customizer' );
 /************* ACTIVE SIDEBARS ********************/
 
 // Sidebars & Widgetizes Areas
-function bones_register_sidebars() {
+/*function bones_register_sidebars() {
 	register_sidebar(array(
 		'id' => 'sidebar1',
 		'name' => __( 'Sidebar 1', 'bonestheme' ),
@@ -118,7 +116,6 @@ function bones_register_sidebars() {
 		'after_title' => '</h4>',
 	));
 
-	/*
 	to add more sidebars or widgetized areas, just copy
 	and edit the above sidebar code. In order to call
 	your new sidebar just use the following code:
@@ -141,8 +138,7 @@ function bones_register_sidebars() {
 	So using the above example, it would be:
 	sidebar-sidebar2.php
 
-	*/
-} // don't remove this bracket!
+}*/ // don't remove this bracket!
 
 
 /************* COMMENT LAYOUT *********************/
