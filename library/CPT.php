@@ -67,7 +67,53 @@ function cptui_register_my_cpts() {
 	);
 	register_post_type( "eventi", $args );
 
-// End of cptui_register_my_cpts()
+	$labels = array(
+		"name" => "Associati",
+		"singular_name" => "Associato",
+		"menu_name" => "Associati",
+		"all_items" => "Tutti gli Associati",
+		"add_new" => "Aggiungi",
+		"add_new_item" => "Aggiungi Associato",
+		"edit" => "Modifica",
+		"edit_item" => "Modifica Associato",
+		"new_item" => "Nuovo Associato",
+		"view" => "Visualizza",
+		"view_item" => "Visualizza Associato",
+		"search_items" => "Cerca Associato",
+		"not_found" => "Nessun Associato trovato",
+		);
+
+	$args = array(
+		"labels" => $labels,
+		"description" => "",
+		"public" => false,
+		"show_ui" => true,
+		"show_in_rest" => false,
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"exclude_from_search" => true,
+		"capability_type" => "post",
+        "capabilities" => array(
+            "edit_post"          => "update_core",
+            "read_post"          => "update_core",
+            "delete_post"        => "update_core",
+            "edit_posts"         => "update_core",
+            "edit_others_posts"  => "update_core",
+            "delete_posts"       => "update_core",
+            "publish_posts"      => "update_core",
+            "read_private_posts" => "update_core"
+        ),
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => array( "slug" => "associati", "with_front" => true ),
+		"query_var" => true,
+		"menu_icon" => "dashicons-groups",		
+		"supports" => array( "title", "editor" ),				
+	);
+	register_post_type( "associati", $args );
+
+// End of cptui_register_my_cpts_associati()
 }
 ?>
+
 
