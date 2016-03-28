@@ -2,21 +2,24 @@
 add_action( 'init', 'cptui_register_my_cpts' );
 function cptui_register_my_cpts() {
 	$labels = array(
-		"name" => "progetti",
-		"singular_name" => "progetto",
+		"name" => "Progetti",
+		"singular_name" => "Progetto",
 		"menu_name" => "Progetti",
 		"all_items" => "Tutti i Progetti",
 		"add_new" => "Aggiungi nuovo",
 		"add_new_item" => "Aggiungi nuovo Progetto",
 		"edit" => "Modifica",
 		"edit_item" => "Modifica Progetto",
-		"new_item" => "Nuovo",
-		"view" => "Vedi",
+		"new_item" => "Nuovo Progetto",
+		"view" => "Visualizza",
+		"view_item" => "Visualizza Progetto",
+		"search_items" => "Cerca Progetto",
+		"not_found" => "Nessun Progetto trovato",
 		);
 
 	$args = array(
 		"labels" => $labels,
-		"description" => "Sezione dedicata alla scrittura della tua documentazione relativa al tuo progetto ",
+		"description" => "",
 		"public" => true,
 		"show_ui" => true,
 		"show_in_rest" => false,
@@ -34,19 +37,19 @@ function cptui_register_my_cpts() {
 	register_post_type( "progetti", $args );
 
 	$labels = array(
-		"name" => "eventi",
-		"singular_name" => "evento",
+		"name" => "Eventi",
+		"singular_name" => "Evento",
 		"menu_name" => "Eventi",
 		"all_items" => "Tutti gli Eventi",
 		"add_new" => "Aggiungi",
 		"add_new_item" => "Aggiungi Evento",
 		"edit" => "Modifica",
 		"edit_item" => "Modifica Evento",
-		"new_item" => "Nuovo evento",
-		"view" => "Vedi",
-		"view_item" => "Vedi Evento",
-		"search_items" => "Cerca evento",
-		"not_found" => "Nessun evento trovato",
+		"new_item" => "Nuovo Evento",
+		"view" => "Visualizza",
+		"view_item" => "Visualizza Evento",
+		"search_items" => "Cerca Evento",
+		"not_found" => "Nessun Evento trovato",
 		);
 
 	$args = array(
@@ -107,6 +110,7 @@ function cptui_register_my_cpts() {
 		"hierarchical" => false,
 		"rewrite" => array( "slug" => "associati", "with_front" => true ),
 		"query_var" => true,
+        "menu_position" => 2,
 		"menu_icon" => "dashicons-groups",		
 		"supports" => array( "title", "editor" ),				
 	);
